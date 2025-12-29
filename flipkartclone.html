@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Clone - Online Shopping</title>
+    <style>
+        /* --- CSS RESET & BASIC VARIABLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif; /* Flipkart uses Roboto */
+        }
+
+        body {
+            background-color: #f1f3f6; /* Light gray background */
+        }
+
+        /* --- NAVBAR STYLES --- */
+        header {
+            background-color: #2874f0; /* The signature Flipkart Blue */
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        
+        .logo span {
+            font-size: 10px;
+            color: #f0f0f0;
+            font-style: italic;
+        }
+        
+        .logo span b { color: #ffe500; } /* The yellow 'Plus' text */
+
+        /* Search Bar */
+        .search-box {
+            background: white;
+            padding: 5px 10px;
+            border-radius: 2px;
+            display: flex;
+            flex: 1; /* Takes up available space */
+            max-width: 500px;
+        }
+
+        .search-box input {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-btn {
+            color: #2874f0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Login Button */
+        .login-btn {
+            background-color: white;
+            color: #2874f0;
+            border: 1px solid #dbdbdb;
+            padding: 5px 30px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        /* --- CATEGORIES SECTION --- */
+        .categories {
+            background: white;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+
+        .cat-item {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .cat-item img {
+            width: 64px;
+            height: 64px;
+        }
+
+        .cat-item p {
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        /* --- HERO BANNER --- */
+        .banner {
+            width: 98%;
+            margin: 10px auto;
+        }
+        .banner img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* --- PRODUCT SECTION --- */
+        .product-section {
+            background: white;
+            width: 98%;
+            margin: 0 auto 20px auto;
+            padding: 20px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 { font-size: 22px; }
+        
+        .view-all-btn {
+            background-color: #2874f0;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .product-grid {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto; /* Allows horizontal scrolling */
+            padding-bottom: 10px;
+        }
+
+        .product-card {
+            min-width: 200px;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .product-card:hover { transform: scale(1.02); }
+
+        .product-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .product-title { font-size: 14px; font-weight: 500; color: #212121; }
+        .product-discount { color: #388e3c; font-size: 13px; margin: 5px 0; }
+        .product-tag { color: #878787; font-size: 13px; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #172337;
+            color: white;
+            padding: 40px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        footer ul { list-style: none; }
+        footer li { margin-bottom: 10px; font-size: 12px; color: #fff; cursor: pointer; }
+        footer h4 { margin-bottom: 15px; color: #878787; font-size: 12px; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                Flixkart
+                <span>Explore <b>Plus</b></span>
+                <span><i>made with</i> <b>love</b></span>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Search for products, brands and more">
+                <button class="search-btn">🔍</button>
+            </div>
+
+            <a href="#" class="login-btn">Login</a>
+            <a href="#" class="nav-link">Become a Seller</a>
+            <a href="#" class="nav-link">More</a>
+            <a href="#" class="nav-link">Cart</a>
+        </div>
+    </header>
+
+    <div class="categories">
+        <div class="cat-item">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png" alt="Top Offers">
+            <p>Top Offers</p>
+        </div>
+        <div class="cat-item">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png" alt="Grocery">
+            <p>Grocery</p>
+        </div>
+        <div class="cat-item">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png" alt="Mobiles">
+            <p>Mobiles</p>
+        </div>
+        <div class="cat-item">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/c12afc017e6f24cb.png" alt="Fashion">
+            <p>Fashion</p>
+        </div>
+        <div class="cat-item">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png" alt="Electronics">
+            <p>Electronics</p>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&h=350&fit=crop" alt="Big Sale Banner">
+    </div>
+
+    <div class="product-section">
+        <div class="section-header">
+            <h2>Best of Electronics</h2>
+            <button class="view-all-btn">VIEW ALL</button>
+        </div>
+
+<div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300" alt="Camera">
+                <div class="product-title">Top Mirrorless Cameras</div>
+                <div class="product-discount">Shop Now!</div>
+                <div class="product-tag">Canon, Sony & more</div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1517601278517-456741619dad?w=300" alt="Projector">
+                <div class="product-title">Projectors</div>
+                <div class="product-discount">From ₹9999</div>
+                <div class="product-tag">ZEBRONICS</div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=300" alt="Printer">
+                <div class="product-title">Printers</div>
+                <div class="product-discount">From ₹10,999</div>
+                <div class="product-tag">Epson, HP</div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=300" alt="Monitor">
+                <div class="product-title">Monitors</div>
+                <div class="product-discount">From ₹8,000</div>
+                <div class="product-tag">Dell, Acer</div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=300" alt="Monitor">
+                <div class="product-title">Samsung Monitors</div>
+                <div class="product-discount">Min 40% Off</div>
+                <div class="product-tag">Top Rated</div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <h4>ABOUT</h4>
+            <ul>
+                <li>Contact Us</li>
+                <li>About Us</li>
+                <li>Careers</li>
+                <li>Flipkart Stories</li>
+            </ul>
+        </div>
+        <div>
+            <h4>HELP</h4>
+            <ul>
+                <li>Payments</li>
+                <li>Shipping</li>
+                <li>Cancellation</li>
+                <li>FAQ</li>
+            </ul>
+        </div>
+        <div>
+            <h4>POLICY</h4>
+            <ul>
+                <li>Return Policy</li>
+                <li>Terms Of Use</li>
+                <li>Security</li>
+                <li>Privacy</li>
+            </ul>
+        </div>
+        <div>
+            <h4>SOCIAL</h4>
+            <ul>
+                <li>Facebook</li>
+                <li>Twitter</li>
+                <li>YouTube</li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chess Gallery</title>
+    <style>
+        .gallery { display: flex; gap: 20px; flex-wrap: wrap; }
+        figure { border: 1px solid #ccc; margin: 0; width: 300px; background: #f9f9f9; }
+        img { width: 100%; }
+        figcaption { padding: 10px; text-align: center; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Chess Concepts Gallery</h1>
+    <div class="gallery">
+        <figure>
+            <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=300" alt="Chess Board">
+            <figcaption>The Opening Setup</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="https://images.unsplash.com/photo-1586165368502-1bad197a6461?w=300" alt="Checkmate">
+            <figcaption>The Checkmate</figcaption>
+        </figure>
+
+        <figure>
+            <video width="300" controls>
+                <source src="movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption>Match Highlights</figcaption>
+        </figure>
+    </div>
+</body>
+</html>

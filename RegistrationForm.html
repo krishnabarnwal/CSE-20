@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <style>
+        form { width: 300px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        input { width: 90%; padding: 10px; margin-bottom: 10px; }
+        button { width: 100%; padding: 10px; background: blue; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Register</h2>
+    <form action="/submit-registration">
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="John" required><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="john@example.com" required><br>
+
+        <label for="pwd">Password:</label><br>
+        <input type="password" id="pwd" name="pwd" required><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob"><br>
+
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>

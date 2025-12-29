@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern Navbar</title>
+    <style>
+        body { margin: 0; font-family: sans-serif; }
+        
+        nav {
+            background: #2c3e50;
+            display: flex; /* Aligns logo and links horizontally */
+            justify-content: space-between; /* Pushes them to edges */
+            align-items: center;
+            padding: 15px 50px;
+            color: white;
+        }
+
+        .logo { font-size: 24px; font-weight: bold; letter-spacing: 2px; }
+
+        .nav-links { list-style: none; display: flex; gap: 20px; margin: 0; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: #3498db; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">MYBRAND</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <h1 style="text-align:center; margin-top:50px;">Content goes here...</h1>
+</body>
+</html>

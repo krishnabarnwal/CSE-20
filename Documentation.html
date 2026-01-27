@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>C++ Basics Documentation</title>
+    <style>
+        body { display: flex; font-family: monospace; }
+        nav { width: 20%; background: #eee; height: 100vh; padding: 20px; position: fixed; }
+        main { margin-left: 25%; padding: 20px; width: 70%; }
+        code { background: #333; color: #0f0; padding: 2px 5px; border-radius: 4px; }
+        pre { background: #333; color: #fff; padding: 15px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <h3>C++ Docs</h3>
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#hello">Hello World</a></li>
+            <li><a href="#vars">Variables</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="intro">
+            <h1>Introduction to C++</h1>
+            <p>C++ is a cross-platform language that can be used to create high-performance applications.</p>
+        </section>
+
+        <section id="hello">
+            <h2>Hello World</h2>
+            <p>To output text to the screen, we use <code>cout</code>.</p>
+            <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+  cout << "Hello World!";
+  return 0;
+}
+            </pre>
+        </section>
+        
+        <section id="vars">
+            <h2>Variables</h2>
+            <p>Variables are containers for storing data values, like <code>int</code>, <code>double</code>, and <code>char</code>.</p>
+        </section>
+    </main>
+</body>
+</html>

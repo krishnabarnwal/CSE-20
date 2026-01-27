@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; display: flex; flex-direction: column; height: 100vh; }
+        
+        /* Header (Gmail, Images) */
+        header { display: flex; justify-content: flex-end; padding: 20px; gap: 15px; align-items: center; }
+        header a { text-decoration: none; color: #000; font-size: 13px; }
+        header a:hover { text-decoration: underline; }
+        .profile-pic { border-radius: 50%; width: 32px; background: purple; color: white; text-align: center; line-height: 32px; }
+
+        /* Main Center Content */
+        main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        
+        .logo { font-size: 90px; font-weight: bold; letter-spacing: -5px; margin-bottom: 20px; }
+        .g-blue { color: #4285F4; } .g-red { color: #DB4437; } .g-yellow { color: #F4B400; } .g-green { color: #0F9D58; }
+
+        .search-bar {
+            width: 580px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+        .search-bar:hover { box-shadow: 0 1px 6px rgba(32,33,36,0.28); }
+        .search-bar input { border: none; outline: none; flex: 1; font-size: 16px; }
+
+        .buttons { margin-top: 30px; }
+        .btn { background-color: #f8f9fa; border: 1px solid #f8f9fa; padding: 10px 20px; margin: 0 5px; color: #3c4043; cursor: pointer; border-radius: 4px; }
+        .btn:hover { border: 1px solid #dadce0; box-shadow: 0 1px 1px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#">Gmail</a>
+        <a href="#">Images</a>
+        <div class="profile-pic">A</div>
+    </header>
+
+    <main>
+        <div class="logo">
+            <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+        </div>
+        <div class="search-bar">
+            <span>🔍</span>
+            <input type="text">
+            <span>🎤</span>
+        </div>
+        <div class="buttons">
+            <button class="btn">Google Search</button>
+            <button class="btn">I'm Feeling Lucky</button>
+        </div>
+    </main>
+</body>
+</html>

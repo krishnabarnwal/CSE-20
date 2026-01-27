@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Market Survey</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <h1>Feedback Survey</h1>
+    <form>
+        <div class="form-group">
+            <label>How did you hear about us?</label><br>
+            <select name="source">
+                <option value="social">Social Media</option>
+                <option value="friend">Friend</option>
+                <option value="ad">Advertisement</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Would you recommend us?</label><br>
+            <input type="radio" id="yes" name="recommend" value="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="recommend" value="no">
+            <label for="no">No</label>
+        </div>
+
+        <div class="form-group">
+            <label>Interests (Check all that apply):</label><br>
+            <input type="checkbox" id="coding" name="interest" value="coding">
+            <label for="coding">Coding</label><br>
+            <input type="checkbox" id="design" name="interest" value="design">
+            <label for="design">Design</label>
+        </div>
+
+        <div class="form-group">
+            <label>Comments:</label><br>
+            <textarea name="comments" rows="4" cols="30"></textarea>
+        </div>
+
+        <input type="submit" value="Submit Feedback">
+    </form>
+</body>
+</html>
